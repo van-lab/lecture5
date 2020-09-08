@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.color-change').forEach( button => {
+          button.onclick = () => {
+            // dataset.color get data from data-color (dataset = data, .color = -color)
+            document.querySelector('#hello').style.color = button.dataset.color;
+          }
+        });
+      });
+    
+
+    </script>
+    <title>My Website</title>
+  </head>
+  <body>
+    <h1 id="hello">Hello!</h1>
+    <button class="color-change" data-color="red">Red</button>
+    <button class="color-change" data-color="green">Green</button>
+    <button class="color-change" data-color="blue">blue</button>
+  </body>
+</html>

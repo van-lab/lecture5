@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interval</title>
+    <script>
+      // set local storage
+      if(!localStorage.getItem('count')) {
+        localStorage.setItem('count', 0);
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#count').innerHTML = localStorage.getItem('count');
+      
+        document.querySelector('button').onclick = () => {
+          let count = localStorage.getItem('count');
+          count++;
+          document.querySelector('#count').innerHTML = count;
+          localStorage.setItem('count', count);
+      }
+    });
+    </script>
+  </head>
+  <body>
+    <h2 id="count">0</h2>
+    <button>click here</button>
+  </body>
+</html>

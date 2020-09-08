@@ -1,0 +1,34 @@
+app:
+index():
+  render index.html
+index.html
+  js script (index.js)
+  form to get currency symbol
+  result as a placeholder in div
+
+index.js
+  listen to DOM
+  when the form submitted onsubmit
+  get currency symbol from index.html (querySelector().value)
+  initiate request XHLHttpRequest
+  request.open to server convert()
+  create key:value data FormData()
+  request.send data to convert()
+  when the request is done request.onloaded()
+    extract JSON data from request.responseText()
+    update the result in div 
+
+/convert(post)
+  get currency symbol from index.js as request.form.get
+  make request.get to api
+  check the reponse from api
+  get the data in json format
+  check the rate is in the data 
+  return the data rate 
+
+
+https://v6.exchangerate-api.com/v6/683a03901bda1750a206b548/latest/USD
+
+https://cdn.cs50.net/
+
+

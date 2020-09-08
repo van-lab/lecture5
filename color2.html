@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#color-change').onchange = function() {
+          // dataset.color get data from data-color (dataset = data, .color = -color)
+          document.querySelector('#hello').style.color = this.value;
+        };
+        });
+    </script>
+    <title>My Website</title>
+  </head>
+  <body>
+    <h1 id="hello">Hello!</h1>
+    <select id="color-change">
+      <option value="black">Black</option>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+    </select>
+  </body>
+</html>

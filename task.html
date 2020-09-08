@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasks</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // set submit button to disable
+        document.querySelector('#submit').disabled = true;
+        if (document.querySelector('#task').value.length > 0)
+          document.querySelector('#submit').disabled = false;
+        else
+          document.querySelector('#submit').disabled = true;
+        // enable button only if text is existed
+        document.querySelector('#task').onkeyup = () => {
+          document.querySelector('#submit').disabled = false;
+        }
+        document.querySelector('#new-task').onsubmit = () => {
+          // create new item for list
+          const li = document.createElement("li");
+          // get value from submit form
+          li.innerHTML = document.querySelector('#task').value;
+          // add li to ul
+          document.querySelector('#tasks').append(li);
+          // clear input field
+          document.querySelector('#task').value = '';
+          document.querySelector('#submit').disabled = true;
+          // stop form from submitting
+          return false;
+        };
+        });
+    </script>
+  </head>
+  <body>
+    <h1>My Tasks</h1>
+    <ul id="tasks">
+    </ul>
+    <form id="new-task">
+      <input id="task" autocomplete="off" autofocus placeholder="enter new task" type="text">
+      <input id="submit" type="submit">
+    </form>
+  </body>
+</html>
