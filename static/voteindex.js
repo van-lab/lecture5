@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // each button should emit a "submit vote" event
     document.querySelectorAll('button').forEach(button => {
       button.onclick = () => {
-        // from html <button data-vote>
+        // from html <button data-vote = button.dataset.vote>
         const selection = button.dataset.vote;
         // emit "submit vote" event to web server, data =json object selection
         socket.emit('submit vote', {'selection': selection});
